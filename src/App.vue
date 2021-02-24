@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { Chart } from 'highcharts-vue'
+import { Chart } from 'highcharts-vue';
 // import axios from "axios";
 
 export default {
