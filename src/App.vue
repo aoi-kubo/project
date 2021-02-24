@@ -7,6 +7,17 @@
   </div>
 </template>
 
+<script>
+import { Chart } from 'highcharts-vue'
+// import axios from "axios";
+
+export default {
+  components: {
+    Highcharts: Chart
+  }
+}
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -21,5 +32,4 @@
     font-size: 17px;
   }
 }
-
 </style>
