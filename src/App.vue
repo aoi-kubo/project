@@ -36,7 +36,7 @@ export default {
     font-size: 17px;
   }
   .prefectures-container {
-  margin-left: 4%;
+    margin-left: 5%;
   }
 }
 </style>
