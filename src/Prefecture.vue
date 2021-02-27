@@ -1,6 +1,6 @@
 <template>
-  <div class="prefectures-area">
-    <div v-for="prefecture in prefectures" :key="prefecture.id" class="prefecture">
+  <div class="prefecture">
+    <div v-for="prefecture in prefectures" :key="prefecture.id" class="prefecture-area">
       <label :for="prefecture.id">
         <input
           type="checkbox"
@@ -56,15 +56,19 @@ export default {
   }
 };
 </script>
-<style>
-.prefectures-area {
+<style lang="scss">
+.prefecture {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.prefectures {
-  font-size: 15px;
+  &-area {
+    font-size: 15px;
+  }
 }
 label {
   cursor: pointer;
+  input {
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
 }
 </style>
