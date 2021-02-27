@@ -3,19 +3,23 @@
     <h1>都道府県別の総人口推移グラフ</h1>
     <div class="prefectures-container">
       <h2>都道府県名</h2>
+      <Prefectures 
+        @onAddSeries="addSeries" @onRemoveSeries="removeSeries" />
     </div>
+    <Highcharts :options="options" />
   </div>
 </template>
 
 <script>
-import { Chart } from 'highcharts-vue';
-// import axios from "axios";
+import { Chart } from "highcharts-vue";
+import Prefectures from "./Prefecture.vue";
 
 export default {
   components: {
-    Highcharts: Chart
+    Highcharts: Chart,
+    Prefectures: Prefectures
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -30,6 +34,9 @@ export default {
   }
   h2 {
     font-size: 17px;
+  }
+  .prefectures-container {
+  margin-left: 4%;
   }
 }
 </style>
