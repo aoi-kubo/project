@@ -1,4 +1,6 @@
 # my-project
+都道府県別の総人口推移グラフを表示するSPA(Single Page Application)の作成
+使用言語：HTML Scss Vue.js
 
 ## Project setup
 ```
