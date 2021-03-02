@@ -18,6 +18,31 @@ export default {
   components: {
     Highcharts: Chart,
     Prefectures: Prefectures
+  },
+  data() {
+    return {
+      options: {
+        series: [],
+        xAxis: {
+          title: {
+            text: '年度'
+          },
+          categories: [1960, 1970, 1980, 1990, 2000, 2010, 2020, 2030, 2040]
+        },
+        yAxis: {
+          title: {
+            text: '人口数'
+          }
+        },
+        plotOptions: {
+          series: {
+            animation: {
+              duration: 2000
+            }
+          }
+        }
+      }
+    }
   }
 };
 </script>

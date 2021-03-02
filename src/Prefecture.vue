@@ -23,7 +23,7 @@ export default {
       prefectures: []
     };
   },
-    mounted() {
+  mounted() {
     this.initPrefectures();
   },
   methods: {
