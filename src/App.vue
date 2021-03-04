@@ -40,9 +40,14 @@ export default {
               duration: 2000
             }
           }
+        },
+        title: {
+          style: {
+            display: "none"
+          }
         }
       }
-    }
+    };
   }
 };
 </script>
