@@ -48,6 +48,18 @@ export default {
         }
       }
     };
+  },
+  methods: {
+    addSeries: function(id, name, population) {
+      this.options.series.push({
+        id: id,
+        name: name,
+        data: population
+      });
+    },
+    removeSeries: function(id) {
+      this.options.series = this.options.series.filter(val => val.id !== id);
+    }
   }
 };
 </script>

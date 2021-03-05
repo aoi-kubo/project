@@ -5,6 +5,8 @@
         <input
           type="checkbox"
           :id="prefecture.id"
+          :checked="prefecture.isChecked"
+          @click="changeChart(prefecture.id, prefecture.name, prefecture.isChecked)"
         />
         {{ prefecture.name }}
       </label>
@@ -51,6 +53,30 @@ export default {
         });
       } catch (error) {
         console.error(error);
+      }
+    },
+    setChart: async function(id, name) {
+      const key = `population/composition/perYear?cityCode=-&prefCode=${id}`;
+      try {
+        const response = await this.getAPI(key);
+        const population = response.data.result.data[0].data.map(
+          val => val["value"]
+        );
+        this.$emit("onAddSeries", id, name, population);
+        this.prefectures[id - 1].isChecked = true;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    offChart: function(id) {
+      this.$emit("onRemoveSeries", id);
+      this.prefectures[id - 1].isChecked = false;
+    },
+    changeChart: function(id, name, isChecked) {
+      if (isChecked) {
+        this.offChart(id);
+      } else {
+        this.setChart(id, name);
       }
     }
   }
