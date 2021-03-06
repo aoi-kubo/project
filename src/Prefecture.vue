@@ -55,6 +55,7 @@ export default {
         console.error(error);
       }
     },
+    // グラフの描写
     setChart: async function(id, name) {
       const key = `population/composition/perYear?cityCode=-&prefCode=${id}`;
       try {
@@ -68,10 +69,12 @@ export default {
         console.error(error);
       }
     },
+    // グラフの削除
     offChart: function(id) {
       this.$emit("onRemoveSeries", id);
       this.prefectures[id - 1].isChecked = false;
     },
+    // グラフの切り替え
     changeChart: function(id, name, isChecked) {
       if (isChecked) {
         this.offChart(id);

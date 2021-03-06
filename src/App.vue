@@ -81,4 +81,10 @@ export default {
     margin-left: 5%;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .prefectures-container {
+    margin-left: 0;
+  }
+}
 </style>
