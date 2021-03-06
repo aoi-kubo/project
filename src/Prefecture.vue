@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     /* APIの取得 */
-    getAPI: function(key) {
+    fetchAPI: function(key) {
       const response = axios.get(
         `https://opendata.resas-portal.go.jp/api/v1/${key}`,
         {
@@ -43,7 +43,7 @@ export default {
     initPrefectures: async function() {
       const key = "prefectures";
       try {
-        const response = await this.getAPI(key);
+        const response = await this.fetchAPI(key);
         this.prefectures = response.data.result.map(val => {
           return {
             id: val["prefCode"],
@@ -59,7 +59,7 @@ export default {
     setChart: async function(id, name) {
       const key = `population/composition/perYear?cityCode=-&prefCode=${id}`;
       try {
-        const response = await this.getAPI(key);
+        const response = await this.fetchAPI(key);
         const population = response.data.result.data[0].data.map(
           val => val["value"]
         );
